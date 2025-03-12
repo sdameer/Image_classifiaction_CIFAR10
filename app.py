@@ -5,7 +5,7 @@ import torchvision.transforms as transforms
 from PIL import Image
 import torchvision.models as models
 
-# Load the model
+
 @st.cache_resource
 def load_model():
     model = models.resnet50(pretrained=False)
@@ -16,14 +16,14 @@ def load_model():
 
 model = load_model()
 
-# Define image transformation
+
 manual_transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
 ])
 
-# CIFAR-10 class labels
+
 class_labels = ['Airplane', 'Automobile', 'Bird', 'Cat', 'Deer', 'Dog', 'Frog', 'Horse', 'Ship', 'Truck']
 
 st.title("CIFAR-10 Image Classification with ResNet-50")
@@ -35,7 +35,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", use_column_width=True)
     
-    # Preprocess image
+    
     image = manual_transform(image).unsqueeze(0)  # Add batch dimension
     
     # Make prediction
