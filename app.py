@@ -1,3 +1,7 @@
+import os
+os.system('pip install torch torchvision')
+import torch.nn as nn  # Import after installation
+
 import streamlit as st
 import torch.nn as nn
 import torchvision.transforms as transforms
