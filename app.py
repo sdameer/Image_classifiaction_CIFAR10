@@ -1,6 +1,8 @@
 import os
 os.system('pip install torch torchvision')
 import torch.nn as nn  # Import after installation
+import os
+os.environ["PATH"] += os.pathsep + "/home/appuser/.local/bin"
 
 import streamlit as st
 import torch.nn as nn
