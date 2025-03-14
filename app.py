@@ -1,7 +1,4 @@
 import os
-os.system('pip install torch torch')
-os.system('pip install torch torchvision')
-os.environ["PATH"] += os.pathsep + "/home/appuser/.local/bin"
 import torch
 import torch.nn as nn  # Import after installation
 
