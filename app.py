@@ -1,4 +1,13 @@
 import os
+import subprocess
+
+# Force reinstall torch
+subprocess.run(["pip", "install", "--no-cache-dir", "torch", "torchvision"])
+
+import torch  # Now try importing
+import torch.nn as nn
+
+import os
 import torch
 import torch.nn as nn  # Import after installation
 
